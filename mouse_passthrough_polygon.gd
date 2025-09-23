@@ -10,17 +10,12 @@ extends Polygon2D
 # Modified above code to make it work with window resizing / window height width override
 # Still does not work with node scale / resize
 
-# get viewport width specified in project settings, this is "scale = 1" of the window
-var initial_window_width: float
-func _ready() -> void:
-	initial_window_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-
 func _physics_process(delta: float) -> void:
 	get_window().mouse_passthrough = false
 	get_window().mouse_passthrough_polygon = getPolygon()
 
 func getPolygon() -> PackedVector2Array:
-	var window_scale = get_window().size.x / initial_window_width
+	var window_scale = get_window().get_screen_transform().get_scale()
 	var a := []
 	for point in self.polygon:
 		a.append((point * window_scale) + (self.global_position * window_scale))
