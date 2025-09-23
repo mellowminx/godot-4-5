@@ -15,14 +15,9 @@ extends Polygon2D
 # for ex. @onready var my_texture = $TextureButton.texture_normal
 @onready var my_texture
 
-# get viewport width specified in project settings, this is "scale = 1" of the window
-var initial_window_width: float
-
 var generated_polygon
 
 func _ready() -> void:
-	initial_window_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-
 	# Get the image from the texture
 	var image = my_texture.get_image()
 	# Create the BitMap
@@ -40,10 +35,14 @@ func _physics_process(delta: float) -> void:
 	get_window().mouse_passthrough_polygon = getPolygon()
 
 func getPolygon() -> PackedVector2Array:
-	var window_scale = get_window().size.x / initial_window_width
+	var window_scale = get_window().get_screen_transform().get_scale()
+	# still trying to get node_scale to work so haven't used it yet!
+	var node_scale = global_transform.get_scale()
+	var final_scale = window_scale
+	var texture_half_size = my_texture.get_size()/2
 	var a := []
 	for point in polygon:
-		a.append((point * window_scale) + ((self.global_position - (my_texture.get_size()/2)) * window_scale))
+		a.append((point * final_scale) + ((global_position - texture_half_size) * final_scale))
 	var pv2a := PackedVector2Array(a)
 	return pv2a
 
