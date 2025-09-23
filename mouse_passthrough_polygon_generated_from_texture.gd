@@ -10,8 +10,8 @@ extends Polygon2D
 # Still does not work with node scale / resize
 
 # reference a texture here
-# for ex. 
-var my_texture
+# for ex. @onready var my_texture = $TextureButton.texture_normal
+@onready var my_texture
 
 # get viewport width specified in project settings, this is "scale = 1" of the window
 var initial_window_width: float
@@ -39,69 +39,8 @@ func _physics_process(delta: float) -> void:
 
 func getPolygon() -> PackedVector2Array:
 	var window_scale = get_window().size.x / initial_window_width
-	#var window_scale = 0.5
-	#print(window_scale)
-	#print(scale)
 	var a := []
 	for point in polygon:
-		a.append((point * window_scale) + ((self.global_position - (my_texture.get_size()/2) * window_scale))
+		a.append((point * window_scale) + ((self.global_position - (my_texture.get_size()/2)) * window_scale))
 	var pv2a := PackedVector2Array(a)
 	return pv2a
-
-
-
-
-
-
-
-
-
-
-extends Polygon2D
-
-#func _ready() -> void:
-	#get_window().mouse_passthrough = false
-
-@onready var fishbowl_button: TextureButton = $"../fishbowl-button"
-
-var initial_window_width: float
-
-var dynamic_polygon
-
-func _ready() -> void:
-	initial_window_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-	#print(scale)
-	#print(get_parent().scale)
-	#print(get_parent().get_parent().scale)
-	
-	# Get the image from the texture normal
-	var image = fishbowl_button.texture_normal.get_image()
-	# Create the BitMap
-	var bitmap = BitMap.new()
-	# Fill it from the image alpha
-	bitmap.create_from_image_alpha(image)
-	# Create polygon
-	var polygon_from_bitmap = bitmap.opaque_to_polygons(Rect2(Vector2(), image.get_size()))
-	dynamic_polygon = polygon_from_bitmap[0]
-	polygon = dynamic_polygon
-
-func _physics_process(delta: float) -> void:
-	get_window().mouse_passthrough = false
-	get_window().mouse_passthrough_polygon = getPolygon()
-	#get_window().mouse_passthrough_polygon = polygon
-
-# now works with window resize!
-# does not work with node scale
-func getPolygon() -> PackedVector2Array:
-	var window_scale = get_window().size.x / initial_window_width
-	#var window_scale = 0.5
-	#print(window_scale)
-	#print(scale)
-	var a := []
-	for point in polygon:
-		a.append((point * window_scale) + ((self.global_position - (fishbowl_button.texture_normal.get_size()/2)) * window_scale))
-	var pv2a := PackedVector2Array(a)
-	return pv2a
-
-func _on_draw() -> void:
-	draw_polyline(getPolygon(), Color.AQUA)
