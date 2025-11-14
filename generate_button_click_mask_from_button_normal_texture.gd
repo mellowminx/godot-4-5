@@ -23,3 +23,8 @@ func generate_texture_from_click_mask(_texture) -> void:
 		bitmap.create_from_image_alpha(image)
 		# Assign it to the mask
 		texture_click_mask = bitmap
+		# (optional) For debugging, assign it to the child Sprite2D node to display click mask bitmap
+		#var bitmap_image = bitmap.convert_to_image()
+		#var bitmap_texture = ImageTexture.create_from_image(bitmap_image)
+		#bitmap_sprite.texture = bitmap_texture
+		#bitmap_sprite.position = position
