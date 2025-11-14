@@ -6,7 +6,7 @@ extends Polygon2D
 # Attach this script to the Polygon2D that will be used as the mouse_passthrough_polygon
 # Reference a texture
 
-# Modified from https://github.com/mellowminx/godot-4-5/blob/main/mouse_passthrough_polygon.gd and https://github.com/mellowminx/godot-4-5/blob/main/button_texture_click_mask.gd
+# Modified from https://github.com/mellowminx/godot-4-5/blob/main/mouse_passthrough_polygon.gd and https://github.com/mellowminx/godot-4-5/blob/main/generate_button_click_mask_from_button_normal_texture.gd
 
 # Works with window resizing / window height width override
 # Still does not work with node scale / resize
