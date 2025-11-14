@@ -1,5 +1,10 @@
 extends CollisionPolygon2D
 
+# check if mouse click inside polygon shape
+# useful when you can't use "mouse_entered" / "mouse_exited"
+# for ex. with a touchscreen (phone/tablet) where you tap on a point and need to know if it's inside an area or not; no cursor to enter/exit the area
+# useful when area2D shape is a polygon, not a rect (there are easier solutions for rect shapes)
+
 # reference polygon node
 # can be Polygon2D or CollisionPolygon2D
 var polygon_node = self
