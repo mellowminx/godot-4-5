@@ -4,6 +4,7 @@ extends CollisionPolygon2D
 # useful when you can't use "mouse_entered" / "mouse_exited"
 # for ex. with a touchscreen (phone/tablet) where you tap on a point and need to know if it's inside an area or not; no cursor to enter/exit the area
 # useful when area2D shape is a polygon, not a rect (there are easier solutions for rect shapes)
+# note that mouse activity still gets interference from other nodes that have mouse filter set to STOP/PASS, so this is NOT a solution for having translucent overlapping clickable objects
 
 # reference polygon node
 # can be Polygon2D or CollisionPolygon2D
