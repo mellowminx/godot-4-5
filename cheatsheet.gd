@@ -1,5 +1,5 @@
 # Just my personal cheat sheet
-# Code I use often but always forget
+# Code I use often but always forget how to write
 
 await get_tree().create_timer(1.0).timeout
 
