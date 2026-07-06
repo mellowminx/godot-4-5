@@ -7,4 +7,4 @@ await RenderingServer.frame_post_draw
 
 # needs stored variable reference to node
 is_instance_valid(instance)
-is_queued_for_deletion(instance)
+instance.is_queued_for_deletion()
