@@ -11,6 +11,7 @@
 # in my setup, the parent node still has "z as relative" and "y sort enabled" checked. child nodes have only "z as relative" checked.
 # the parent node should be provided in the parameter
 # I call this function whenever a clickable game object changes position
+# early return if there's only 1 child node
 
 func reorder_children_y(parent) -> void:
 	var children_draft : Array = parent.get_children()
