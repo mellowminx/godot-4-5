@@ -1,6 +1,17 @@
+# script to manually sort child nodes (their order in the node tree) based on y-sort
 # used to correct mouse input propagation following y-sort
-# reorder children based on y position
-# used by fishbowl containers
+# reorders children nodes based on y position
+
+# using built-in y-sort feature only sorts nodes' z-index visually, but mouse input propagation still follows node tree order
+# this is because mouse input (hover, click) still follows node tree order
+# so if there are lots of clickable game objects using y-sort, it can be unintuitive to click on them because the object shown on top
+# (highest z-index via y-sort) is not necessarily the one at the bottom of the node order, so the mouse input will still be detected by
+# whichever node is highest in the tree order
+
+# in my setup, the parent node still has "z as relative" and "y sort enabled" checked. child nodes have only "z as relative" checked.
+# the parent node should be provided in the parameter
+# I call this function whenever a clickable game object changes position
+
 func reorder_children_y(parent) -> void:
 	var children_draft : Array = parent.get_children()
 	if children_draft.size() <= 1:
