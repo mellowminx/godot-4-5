@@ -1,3 +1,6 @@
+# useful for 2D games where there are a lot of clickable game objects that often change position
+# for example, a game where you can click and drag to move decorations around
+
 # script to manually sort child nodes (their order in the node tree) based on y-sort
 # used to correct mouse input propagation following y-sort
 # reorders children nodes based on y position
