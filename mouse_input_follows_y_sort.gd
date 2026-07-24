@@ -16,7 +16,6 @@
 func reorder_children_y(parent) -> void:
 	var children_draft : Array = parent.get_children()
 	if children_draft.size() <= 1:
-		#print_debug("early return only 1 child")
 		return
 	var children : Array = []
 	for i in children_draft:
