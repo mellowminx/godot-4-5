@@ -25,3 +25,8 @@ func _ready() -> void:
 
 enum State { IDLE, WALK, RUN, JUMP }
 var current_state: State = State.IDLE
+
+# placeholder text (useful for translations)
+text = ("out of %s" % "food") # "out of food"
+text = ("%s is %s" % ["apple", "red"]) # "apple is red"
+text = ("{fruit} is {color}").format({fruit = "apple", color = "red"}) # apple is red
