@@ -35,3 +35,6 @@ text = ("{fruit} is {color}").format({fruit = "apple", color = "red"}) # apple i
 var sometext: String = "Hello"
 type_string(typeof(sometext))
 # String
+# useful for data validation
+# note that for json data validation, json turns int data into float data
+# so int and float should be considered equivalent for json data validation
