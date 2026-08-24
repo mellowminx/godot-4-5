@@ -38,3 +38,10 @@ type_string(typeof(sometext))
 # useful for data validation
 # note that for json data validation, json turns int data into float data
 # so int and float should be considered equivalent for json data validation
+
+# file save dialog
+var dialog = SAVE_FILE_DIALOG.instantiate()
+dialog.data = _data
+# set default filename BEFORE adding child / node ready
+dialog.get_line_edit().text = _data["default_file_base_name"]
+GLOBAL.world.add_child(dialog)
