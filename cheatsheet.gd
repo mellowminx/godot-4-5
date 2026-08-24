@@ -30,3 +30,8 @@ var current_state: State = State.IDLE
 text = ("out of %s" % "food") # "out of food"
 text = ("%s is %s" % ["apple", "red"]) # "apple is red"
 text = ("{fruit} is {color}").format({fruit = "apple", color = "red"}) # apple is red
+
+# get readable variable type
+var sometext: String = "Hello"
+type_string(typeof(sometext))
+# String
