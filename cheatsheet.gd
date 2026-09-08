@@ -26,7 +26,7 @@ var current_state: State = State.IDLE
 enum Fruit { APPLE, ORANGE, BANANA }
 func get_save_data() -> Dictionary:
   var data: Dictionary
-  data = {"collected_fruits": [Fruit.APPLE, Fruit.Orange]}
+  data = {"collected_fruits": [Fruit.APPLE, Fruit.ORANGE]}
   return data
 # in json, data gets saved as:
 # {"collected_fruits": ["0", "1"]}
