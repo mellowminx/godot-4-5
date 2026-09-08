@@ -18,13 +18,27 @@ instance.is_queued_for_deletion()
 
 @export_enum("apple", "orange", "banana") var fruit := "apple"
 
+enum State { IDLE, WALK, RUN, JUMP }
+var current_state: State = State.IDLE
+
+# note - enums are not saved in json and must be converted back to enum when loading saved data
+# for ex.
+enum Fruit { APPLE, ORANGE, BANANA }
+func get_save_data() -> Dictionary:
+  var data: Dictionary
+  data = {"collected_fruits": [Fruit.APPLE, Fruit.Orange]}
+  return data
+# in json, data gets saved as:
+# {"collected_fruits": ["0", "1"]}
+func load_save_data(data: Dictionary) -> void:
+  var converted_data: Dictionary
+  for fruit in data["collected_fruits"]:
+    converted_data["collected_fruits"].append(int(fruit) as Fruit)
+
 @export var sprite_node: Sprite2D
 # require export node to be assigned in inspector
 func _ready() -> void:
   assert(sprite_node != null, "ERROR: assign sprite_node export in inspector")
-
-enum State { IDLE, WALK, RUN, JUMP }
-var current_state: State = State.IDLE
 
 # placeholder text (useful for translations)
 text = ("out of %s" % "food") # "out of food"
