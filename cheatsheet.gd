@@ -26,14 +26,14 @@ var current_state: State = State.IDLE
 enum Fruit { APPLE, ORANGE, BANANA }
 func get_save_data() -> Dictionary:
   var data: Dictionary
-  data = {"collected_fruits": [Fruit.APPLE, Fruit.ORANGE]}
+  data = {"selected_fruit": Fruit.APPLE}
   return data
 # in json, data gets saved as:
-# {"collected_fruits": ["0", "1"]}
+# {"selected_fruit": "0"}
 func load_save_data(data: Dictionary) -> void:
   var converted_data: Dictionary
-  for fruit in data["collected_fruits"]:
-    converted_data["collected_fruits"].append(int(fruit) as Fruit)
+  var fruit = int(data["selected_fruit"])
+  converted_data["selected_fruit"] = fruit as Fruit
 
 @export var sprite_node: Sprite2D
 # require export node to be assigned in inspector
