@@ -59,3 +59,7 @@ dialog.data = _data
 # set default filename BEFORE adding child / node ready
 dialog.get_line_edit().text = _data["default_file_base_name"]
 GLOBAL.world.add_child(dialog)
+
+# possible bug? window flags need to be set manually in script, just checking them in the inspector might not work
+get_window().transparent = true
+get_window().transparent_bg = true
