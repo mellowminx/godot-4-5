@@ -63,3 +63,8 @@ GLOBAL.world.add_child(dialog)
 # possible bug? window flags need to be set manually in script, just checking them in the inspector might not work
 get_window().transparent = true
 get_window().transparent_bg = true
+
+# GDSCRIPT comments highlight the ff words
+# 🔴 Critical (Red): ALERT, ATTENTION, CAUTION, CRITICAL, DANGER, SECURITY
+# 🟡 Warning (Yellow/Orange): BUG, DEPRECATED, FIXME, HACK, TASK, TBD, TODO, WARNING
+# 🟢 Notice (Green): INFO, NOTE, NOTICE, TEST, TESTING
