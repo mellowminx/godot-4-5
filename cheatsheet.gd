@@ -68,3 +68,6 @@ get_window().transparent_bg = true
 # 🔴 Critical (Red): ALERT, ATTENTION, CAUTION, CRITICAL, DANGER, SECURITY
 # 🟡 Warning (Yellow/Orange): BUG, DEPRECATED, FIXME, HACK, TASK, TBD, TODO, WARNING
 # 🟢 Notice (Green): INFO, NOTE, NOTICE, TEST, TESTING
+
+### OPTIMIZATION
+# better to use image files rather than gradient textures
