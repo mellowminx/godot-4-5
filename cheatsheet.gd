@@ -71,3 +71,19 @@ get_window().transparent_bg = true
 
 ### OPTIMIZATION
 # better to use image files rather than gradient textures
+
+### BUTTON signals for quick copy/paste
+
+func connect_button_signals() -> void:
+	mouse_entered.connect(on_mouse_entered)
+	mouse_exited.connect(on_mouse_exited)
+	pressed.connect(on_pressed)
+
+func on_mouse_entered() -> void:
+	pass
+
+func on_mouse_exited() -> void:
+	pass
+
+func on_pressed() -> void:
+	pass
