@@ -78,6 +78,7 @@ func connect_button_signals() -> void:
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
 	pressed.connect(on_pressed)
+	toggled.connect(on_toggled)
 
 func on_mouse_entered() -> void:
 	pass
@@ -86,4 +87,7 @@ func on_mouse_exited() -> void:
 	pass
 
 func on_pressed() -> void:
+	pass
+
+func on_toggled(toggled_on: bool) -> void:
 	pass
