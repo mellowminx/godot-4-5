@@ -74,6 +74,9 @@ get_window().transparent_bg = true
 
 ### BUTTON signals for quick copy/paste
 
+func _ready() -> void:
+	connect_button_signals()
+
 func connect_button_signals() -> void:
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
@@ -81,13 +84,17 @@ func connect_button_signals() -> void:
 	toggled.connect(on_toggled)
 
 func on_mouse_entered() -> void:
+	print_debug("mouse entered")
 	pass
 
 func on_mouse_exited() -> void:
+	print_debug("mouse exited")
 	pass
 
 func on_pressed() -> void:
+	print_debug("pressed")
 	pass
 
 func on_toggled(toggled_on: bool) -> void:
+	print_debug("toggled")
 	pass
