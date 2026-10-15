@@ -69,6 +69,11 @@ get_window().transparent_bg = true
 # 🟡 Warning (Yellow/Orange): BUG, DEPRECATED, FIXME, HACK, TASK, TBD, TODO, WARNING
 # 🟢 Notice (Green): INFO, NOTE, NOTICE, TEST, TESTING
 
+### comment foldable regions
+#region region_name
+# ...some code...
+#endregion
+
 ### OPTIMIZATION
 # better to use image files rather than gradient textures
 
