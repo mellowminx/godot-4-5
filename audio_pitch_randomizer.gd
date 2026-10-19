@@ -1,3 +1,5 @@
+# used to make sound effects less monotonous by randomizing pitch scale
+
 extends AudioStreamPlayer2D
 
 @export var sounds : Array[AudioStream]
