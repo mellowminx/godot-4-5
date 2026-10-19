@@ -28,7 +28,7 @@ func play_sound() -> void:
 	stream = sounds[0]
 	pitch_scale = randf_range(pitch_min,pitch_max)
   # option to use pitch scale based on semitone adjustment
-	# pitch_scale = get_pitch_scale()
+	# pitch_scale = get_adjusted_pitch_scale()
 	play()
 	check_for_fade()
 
@@ -48,7 +48,7 @@ func on_fade_timer_timeout() -> void:
 	volume_db = saved_volume_db
 
 ### OPTION TO ADJUST PITCH SCALE BASED ON SEMITONES
-func get_pitch_scale() -> float:
+func get_adjusted_pitch_scale() -> float:
 	# major pentatonic
 	#var _semitone_change: float = [0,2,4,7,9].pick_random()
 	# major
