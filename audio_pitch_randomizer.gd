@@ -24,7 +24,8 @@ func _ready() -> void:
 	fade_timer.timeout.connect(on_fade_timer_timeout)
 
 func play_sound() -> void:
-	sounds.shuffle()
+	if sounds.size() > 1:
+		sounds.shuffle()
 	stream = sounds[0]
 	pitch_scale = randf_range(pitch_min,pitch_max)
   # option to use pitch scale based on semitone adjustment
