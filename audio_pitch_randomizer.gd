@@ -1,4 +1,4 @@
-# used to make sound effects less monotonous by randomizing pitch scale
+# used to make sound effects less monotonous by randomizing sound file and pitch scale
 
 extends AudioStreamPlayer2D
 
